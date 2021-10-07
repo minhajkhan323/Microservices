@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: user_service
+        uri: http://localhost:9001/
+        predicates:        - Path= /user/**
+        
+      - id: contact_service
+        uri: http://localhost:9002/
+        predicates:        - Path= /contact/**
+                  
